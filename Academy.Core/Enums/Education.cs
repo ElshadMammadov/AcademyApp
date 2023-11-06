@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Academy.Core.Enums
 {
-    internal class Education
+    public enum Education
     {
+        programing=1,
+        Desinger,
+        SystemAdminstrator
     }
 }

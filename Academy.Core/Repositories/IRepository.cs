@@ -2,7 +2,7 @@
 using System;
 namespace Academy.Core.Repositories
 {
-    internal interface IRepository<T> where T : BaseModel
+    public interface IRepository<T> where T : BaseModel
     {
         public Task AddAsync(T entity);
         public Task RemoveAsync(T entity);

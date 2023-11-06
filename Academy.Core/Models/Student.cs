@@ -3,7 +3,7 @@ using Academy.Core.Models.BaseModels;
 using System;
 namespace Academy.Core.Models
 {
-    internal class Student : BaseModel
+    public class Student : BaseModel
     {
         static int _id;
         public string FullName { get; set; }    

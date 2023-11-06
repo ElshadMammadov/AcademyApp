@@ -6,29 +6,29 @@ namespace Academy.Data.Repositores
 {
     public class Repository<T> : IRepository<T> where T : BaseModel
     {
-        public Task AddAsync(T entity)
+        List<T> values = new List<T>(); 
+        public async Task AddAsync(T entity)
         {
-            throw new NotImplementedException();
+            values.Add(entity);    
+        }
+        public async Task<List<T>> GetAllAsync()
+        {
+            return values;  
         }
 
-        public Task<List<T>> GetAllAsync()
+        public async Task<List<T>> GetAllAsync(Func<T, bool> func)
         {
-            throw new NotImplementedException();
+            return values.Where(func).ToList();
         }
 
-        public Task<List<T>> GetAllAsync(Func<T, bool> func)
+        public async Task<T> GetAsync(Func<T, bool> func)
         {
-            throw new NotImplementedException();
+            return values.FirstOrDefault(func);
         }
 
-        public Task<T> GetAsync(Func<T, bool> func)
+        public async Task RemoveAsync(T entity)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task RemoveAsync(T entity)
-        {
-            throw new NotImplementedException();
+            values.Remove(entity);
         }
     }
 }
